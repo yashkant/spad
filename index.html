@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title> SPAD: Spatially Aware Multiview Diffusers </title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+    <!--FACEBOOK-->
+
+
+    <!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+    <!-- <link rel="icon" type="image/png" href="img/seal_icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="js/app.js"></script>
+
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b><em>SPAD</em></b>: Spatially Aware Multiview Diffusers<br>
+                <!-- <small>
+                    Accepted to SIGGRAPH Asia, 2023
+                </small> -->
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://yashkant.github.io">
+                            Yash Kant
+                        </a>
+                        <br>University of Toronto
+                    </li>
+                    <li>
+                        <a href="https://aliaksandrsiarohin.github.io/aliaksandr-siarohin-website/">
+                            Aliaksandr Siarohin
+                        </a>
+                        <br>Snap Research
+                    </li>
+                    <li>
+                        <a href="https://aliaksandrsiarohin.github.io/aliaksandr-siarohin-website/">
+                            Ziyi Wu
+                        </a>
+                        <br>University of Toronto
+                    </li>
+                    <li>
+                        <a href="http://alpguler.com/">
+                            Michael Vasilkovsky
+                        </a>
+                        <br>Snap Research
+                    </li>
+                    <li>
+                        <a href="http://alpguler.com/">
+                            Guocheng Qian
+                        </a>
+                        <br>KAUST
+                    </li>
+                    <br>
+                    <li>
+                        <a href="https://alanspike.github.io/">
+                            Jian Ren
+                        </a>
+                        <br>Snap Research
+                    </li>
+                    <li>
+                        <a href="http://alpguler.com/">
+                            Riza Alp Guler
+                        </a>
+                        <br>Snap Research
+                    </li>
+                    <li>
+                        <a href="http://alpguler.com/">
+                            Bernard Ghanem
+                        </a>
+                        <br>KAUST
+                    </li>
+                    <li>
+                        <a href="http://www.stulyakov.com/">
+                            Sergey Tulyakov
+                        </a>
+                        <br>Snap Research
+                    </li>
+                    <li>
+                        <a href="https://www.gilitschenski.org/igor/">
+                            Igor Gilitschenski
+                        </a>
+                        <br>University of Toronto
+                    </li>
+                    <br>
+                    <br>
+                    <br>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="TODO">
+                            <image src="TODO" height="60px">
+                                <h4><strong>arXiv</strong></h4>
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="">
+                            <image src="img/supp_img.png" height="60px">
+                                <h4><strong>Supplementary</strong></h4>
+                        </a>
+                    </li> -->
+                    <!-- <li>
+                        <a href="img/vids/supp_video.mp4">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Supplementary Video</strong></h4>
+                        </a>
+                    </li> -->
+                    <!-- <li>
+                        <a href="">
+                            <image src="img/ppt.svg" height="60px">
+                                <h4><strong>Slides</strong></h4>
+                        </a>
+                    </li> -->
+                    <!-- <li>
+                        <a href="https://github.com/yashkant/invertible-neural-skinning">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Coming Soon!</strong></h4>
+                        </a>
+                    </li> -->
+                    <!-- <li>
+                            <a href="https://ltvrr.github.io/challenge/">
+                            <image src="img/codalab.png" height="60px">
+                                <h4><strong>CodaLab Challenge</strong></h4>
+                            </a>
+                        </li> -->
+                    <!-- <li>
+                            <a href="https://github.com/">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li> -->
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+                <video muted="" autoplay="" loop="" width="100%" height="100%">
+                    <source src="img/vids/TODO" type="video/mp4">
+                </video>
+    
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    tl;dr
+                </h3>
+                <image src="img/TODO" class="img-responsive" alt="overview"><br>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Citation
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@article{spad2023,
+  title={SPAD: Spatially Aware Multiview Diffusers},
+  author={Kant, Yash and Siarohin, Aliaksandr and Wu, Ziyi and Vasilkovsky, Michael and Qian, Guocheng and Ren, Jian and Guler, Riza Alp and Ghanem, Bernard and Tulyakov, Sergey and Gilitschenski, Igor},
+  journal={arXiv preprint arXiv:TODO},
+  year={2023}
+}
+</textarea>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Overview
+                </h3>
+                <p class="text-justify">
+                    <ul>
+                        <li>
+                            We present a method for generating consistent multi-view images from a text prompt or a single input image, which fine-tunes a large-scale pretrained 2D diffusion model on rendered images of 3D objects. 
+                        </li>
+                        <li>
+                            To enable multi-view generation, we extend the self-attention layers of the diffusion model with cross-view interactions to synchronize information between views.
+                        </li>
+                        <li>
+                            We further incorporate the Epipolar Attention and Plücker coordinate embeddings to enhance the 3D consistency of our generated multi-view images.
+                        </li>
+                    </ul>
+                </p>
+                <br>
+                <div class="text-center">
+                    <div style="text-align:center;">
+                        <image src="img/assets/text-to-mv-teaser.png" class="img-responsive" alt="teaser"></image>
+                    </div>
+                </div>
+                <br>
+                <b>Consistent multi-view generation using text with SPAD.</b> Given a text prompt, our method synthesizes 3D consistent views of the same object, ranging from daily objects to highly complex machines. Our model can generate many images from arbitrary camera viewpoints, while being trained only on four views. Here, we generate eight views sampled uniformly at a fixed elevation.
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Method: <b> <em>SPAD</em> </b>
+                </h3>
+                <p class="text-justify">
+                    <b>Model pipeline.</b>
+                    (a) We fine-tune a pre-trained text-to-image diffusion model on multi-view rendering of 3D objects.
+                    <br>
+                    (b) Our model jointly denoises noisy multi-view images conditioned on text and relative camera poses.
+                    To enable cross-view interaction, we apply 3D self-attention by concatenating all views, and enforce epipolar constraints on the attention map.
+                    <br>
+                    (c) We further add Plücker Embedding to the attention layers as positional encodings, to enhance camera control.
+                </p>
+                <br>
+                <div class="text-center">
+                    <div style="text-align:center;">
+                        <image src="img/assets/model-pipeline.png" class="img-responsive" alt="pipeline"></image>
+                    </div>
+                </div>
+                <br>
+                <div class="text-center">
+                    <div style="text-align:center;">
+                        <image src="img/assets/sub-modules.png" class="img-responsive" alt="sub-modules"></image>
+                    </div>
+                </div>
+                <br>
+                <p class="text-justify">
+                    <b>Epipolar Attention (Left).</b>
+                    For each <font color="red">source point S</font> on a feature map, we compute its <font color="red">epipolar lines</font> on all other views.
+                    <font color="red">S</font> will only attend to features along these lines plus all the points on itself (<font color="DodgerBlue">blue points</font>).
+                    <br>
+                    <b>Illustration of one block in SPAD (Right).</b>
+                    We add Plücker Embedding to feature maps in the self-attention layer by inflating the original QKV projection layers with zero projections.
+                </p>
+            </div>
+        </div>
+        <br>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Quantitative Result: <b>Novel View Synthesis</b>
+                </h3>
+                To evaluate the 3D consistency of our method, we adapt SPAD to the image-conditioned novel view synthesis task.
+                We simply re-train a model which replaces the text embedding input with the CLIP image feature of the source image.
+                We tested on a holdout set of 1,000 Objaverse objects, and all objects from the Google Scanned Objects (GSO) dataset.
+                <br><br>
+                <p style="text-align:center;">
+                    <image src="img/assets/nvs-quant-results.png" class="img-responsive" alt="NVS">
+                </p>
+                <b>SPAD preserves structural and perceptual details faithfully.</b>
+                Our method achieves competitive results on PSNR and SSIM, which setting new state-of-the-art on LPIPS.
+            </div>
+        </div>
+        <br>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Qualitative Result: <b>Ablation Study</b>
+                </h3>
+                We ablate our method on various design choices to demonstrate their importance.
+                <br><br>
+                <p style="text-align:center;">
+                    <image src="img/assets/ablation.png" class="img-responsive" alt="ablation">
+                </p>
+                <b>Epipolar Attention promotes better camera control in SPAD.</b>
+                Directly applying 3D self-attention on all the views leads to content copying between generated images, as highlighted by the <font color="DodgerBlue">blue arrows</font>.
+                <br>
+                <b>Plücker Embeddings help prevent generation of flipped views.</b>
+                Without Plücker Embeddings, the model sometimes predict image regions that are rotated by 180°, as highlighted by the <font color="red">red arrows</font>, due to the ambiguity in epipolar lines.
+            </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Qualitative Result: <b>Text-to-3D Generation</b>
+            </h3>
+            Thanks to our 3D consistent multi-view generation, we can leverage the multi-view Score Distillation Sampling (SDS) for 3D asset generation.
+            We integrate SPAD into <a href="https://github.com/threestudio-project/threestudio">threestudio</a> and follow the training setting of <a href="https://mv-dream.github.io/">MVDream</a> to train a NeRF.
+            <br><br>
+            <p style="text-align:center;">
+                <image src="img/assets/text-to-3d.png" class="img-responsive" alt="3D-SDS">
+            </p>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+        <h3>
+            Qualitative Result: <b>More Text-Guided Multi-View Generation Results</b>
+        </h3>
+        Here, we show more multi-view generation results of SPAD.
+        <br><br>
+        <p style="text-align:center;">
+            <image src="img/assets/more-text-to-mv.png" class="img-responsive" alt="text-to-mv">
+        </p>
+        </div>
+    </div>
+    <!-- <br>
+    <hr>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Qualitative Result: <b>Failure Modes</b>
+            </h3>
+            We find that <b> <em> iNVS </em> </b> struggles most when monocular depth estimator generates inaccurate depth</em>.
+            <br>
+            <p style="text-align:center;">
+                <image src="img/assets/failuresv2.png" height="50px" class="img-responsive">
+            </p>
+        </div>
+    </div> -->
+    <br>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <p>
+                    The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
