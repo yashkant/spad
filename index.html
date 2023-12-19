@@ -120,8 +120,8 @@
             <div class="col-md-8 col-md-offset-2">
                 <ul class="nav nav-pills nav-justified">
                     <li>
-                        <a href="TODO">
-                            <image src="TODO" height="60px">
+                        <a href="">
+                            <image src="img/spad-ss.png" height="60px">
                                 <h4><strong>arXiv</strong></h4>
                         </a>
                     </li>
@@ -165,7 +165,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-8 col-md-offset-2">
 
                 <video muted="" autoplay="" loop="" width="100%" height="100%">
@@ -173,7 +173,7 @@
                 </video>
     
             </div>
-        </div>
+        </div> -->
 
 
 
@@ -182,7 +182,7 @@
                 <h3>
                     tl;dr
                 </h3>
-                <image src="img/TODO" class="img-responsive" alt="overview"><br>
+                <image src="img/text-spad.png" class="img-responsive" alt="overview"><br>
             </div>
         </div>
         <hr>
@@ -261,12 +261,6 @@
                     </div>
                 </div>
                 <br>
-                <div class="text-center">
-                    <div style="text-align:center;">
-                        <image src="img/assets/sub-modules.png" class="img-responsive" alt="sub-modules"></image>
-                    </div>
-                </div>
-                <br>
                 <p class="text-justify">
                     <b>Epipolar Attention (Left).</b>
                     For each <font color="red">source point S</font> on a feature map, we compute its <font color="red">epipolar lines</font> on all other views.
@@ -275,12 +269,51 @@
                     <b>Illustration of one block in SPAD (Right).</b>
                     We add Plücker Embedding to feature maps in the self-attention layer by inflating the original QKV projection layers with zero projections.
                 </p>
+
+                <br>
+                <div class="text-center">
+                    <div style="text-align:center;">
+                        <image src="img/assets/sub-modules.png" class="img-responsive" alt="sub-modules"></image>
+                    </div>
+                </div>
+
             </div>
         </div>
         <br>
         <hr>
 
         <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+            <h3>
+                Qualitative Result: <b>Text-to-3D Generation</b>
+            </h3>
+            Thanks to our 3D consistent multi-view generation, we can leverage the multi-view Score Distillation Sampling (SDS) for 3D asset generation.
+            We integrate SPAD into <a href="https://github.com/threestudio-project/threestudio">threestudio</a> and follow the training setting of <a href="https://mv-dream.github.io/">MVDream</a> to train a NeRF.
+            <br><br>
+            <p style="text-align:center;">
+                <image src="img/assets/text-to-3d.png" class="img-responsive" alt="3D-SDS">
+            </p>
+            <video muted="" autoplay="" loop="" width="100%">
+                <source src="img/vids/sds.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+        <h3>
+            Qualitative Result: <b>More Text-Guided Multi-View Generation Results</b>
+        </h3>
+        Here, we show more multi-view generation results of SPAD.
+        <br><br>
+        <p style="text-align:center;">
+            <image src="img/assets/more-text-to-mv.png" class="img-responsive" alt="text-to-mv">
+        </p>
+        </div>
+    </div>
+
+            <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
                     Quantitative Result: <b>Novel View Synthesis</b>
@@ -318,36 +351,8 @@
         </div>
         <br>
         <hr>
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-            <h3>
-                Qualitative Result: <b>Text-to-3D Generation</b>
-            </h3>
-            Thanks to our 3D consistent multi-view generation, we can leverage the multi-view Score Distillation Sampling (SDS) for 3D asset generation.
-            We integrate SPAD into <a href="https://github.com/threestudio-project/threestudio">threestudio</a> and follow the training setting of <a href="https://mv-dream.github.io/">MVDream</a> to train a NeRF.
-            <br><br>
-            <p style="text-align:center;">
-                <image src="img/assets/text-to-3d.png" class="img-responsive" alt="3D-SDS">
-            </p>
-            <video muted="" autoplay="" loop="" width="100%">
-                <source src="img/vids/sds.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div>
-    <br>
-    <hr>
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-        <h3>
-            Qualitative Result: <b>More Text-Guided Multi-View Generation Results</b>
-        </h3>
-        Here, we show more multi-view generation results of SPAD.
-        <br><br>
-        <p style="text-align:center;">
-            <image src="img/assets/more-text-to-mv.png" class="img-responsive" alt="text-to-mv">
-        </p>
-        </div>
-    </div>
+
+
     <!-- <br>
     <hr>
     <div class="row">
