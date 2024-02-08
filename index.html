@@ -211,14 +211,14 @@
                 </p> -->
                 <br>
                 <!-- # TODO: use video here? -->
-                <div class="text-center">
+                <!-- <div class="text-center">
                     <div style="text-align:center;">
                         <image src="img/assets/teaser.png" class="img-responsive" alt="teaser"></image>
                     </div>
-                </div>
-                <!-- <video muted="" autoplay="" loop="" width="100%" height="100%">
+                </div> -->
+                <video muted="" autoplay="" loop="" width="100%" height="100%">
                     <source src="img/vids/teaser.mp4" type="video/mp4">
-                </video> -->
+                </video>
                 <br>
                 Given a text prompt, our method synthesizes 3D consistent views of the same object. Our model can generate many images from arbitrary camera viewpoints, while being trained only on four views. <b>Here, we show eight views sampled uniformly at a fixed elevation generated in a <u>single forward pass.</u></b>
             </div>
@@ -343,6 +343,28 @@
         <hr>
 
         <div class="row">
+
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Qualitative Result: <b>Comparison with MVDream</b>
+                </h3>
+                <p style="text-align:center;">
+                    <image src="img/assets/compare.jpg" class="img-responsive" alt="compare">
+                </p>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Qualitative Result: <b>Close View Generation</b>
+                </h3>
+                We demonstrate smooth transition between views by generate close viewpoints each varying by 10-degrees along azimuth.
+
+                <br><br>
+                <p style="text-align:center;">
+                    <image src="img/assets/close_view_10deg.jpg" class="img-responsive" alt="close_view_10deg">
+                </p>
+            </div>
+
             <div class="col-md-8 col-md-offset-2">
                 <h3>
                     Qualitative Result: <b>Ablation Study</b>
@@ -357,17 +379,6 @@
                 <br>
                 <b>Plücker Embeddings help prevent generation of flipped views.</b>
                 Without Plücker Embeddings, the model sometimes predict image regions that are rotated by 180°, as highlighted by the <font color="red">red circles</font>, due to the ambiguity in epipolar lines.
-            </div>
-
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Qualitative Result: <b>Close View Generation</b>
-                </h3>
-                We demonstrate smooth transition between views by generate close viewpoints each varying by 10-degrees along azimuth.
-                <br><br>
-                <p style="text-align:center;">
-                    <image src="img/assets/close_view_10deg.jpg" class="img-responsive" alt="close_view_10deg">
-                </p>
             </div>
 
 
