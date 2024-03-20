@@ -22,17 +22,23 @@ Model pipeline. (a) We fine-tune a pre-trained text-to-image diffusion model on 
 (b) Our model jointly denoises noisy multi-view images conditioned on text and relative camera poses. To enable cross-view interaction, we apply 3D self-attention by concatenating all views, and enforce epipolar constraints on the attention map.
 (c) We further add Plücker Embedding to the attention layers as positional encodings, to enhance camera control.
 
+## Citation
+```
+@misc{kant2024spad,
+      title={SPAD : Spatially Aware Multiview Diffusers}, 
+      author={Yash Kant and Ziyi Wu and Michael Vasilkovsky and Guocheng Qian and Jian Ren and Riza Alp Guler and Bernard Ghanem and Sergey Tulyakov and Igor Gilitschenski and Aliaksandr Siarohin},
+      year={2024},
+      eprint={2402.05235},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
+
+
 ## Filtered High-Quality Objaverse 
 If you are looking for the objaverse assets we used to train SPAD models, you can find that list here: [filtered_objaverse.txt](https://github.com/yashkant/spad/data/filtered_objaverse.txt). 
 
 To see how this list was generated / tweak its parameters, you can try this colab notebook here: [filter_objaverse.ipynb](https://colab.research.google.com/drive/1UJM4caaBJsYOkP7EmjPjBvoJ7U0qY4kq#scrollTo=sR28TydbQUuT)
-
-## Visualizing and Creating Epipolar Masks  
-If you would like to visualize the epipolar masks and plucker embeddings or use them as separate module, read and run the following script:
-
-```
-python scripts/visualize_epipolar_mask.py 
-```
 
 ## Repository Setup
 
@@ -89,17 +95,11 @@ You can adjust the following hyperparameters for best results:
 --ddim_steps: 50 to 1000 (default 100)
 ```
 
-## Citation
-Consider citing our work:
+## Visualizing and Creating Epipolar Masks  
+If you would like to visualize the epipolar masks and plucker embeddings or use them as separate module, read and run the following script:
+
 ```
-@misc{kant2024spad,
-      title={SPAD : Spatially Aware Multiview Diffusers}, 
-      author={Yash Kant and Ziyi Wu and Michael Vasilkovsky and Guocheng Qian and Jian Ren and Riza Alp Guler and Bernard Ghanem and Sergey Tulyakov and Igor Gilitschenski and Aliaksandr Siarohin},
-      year={2024},
-      eprint={2402.05235},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
+python scripts/visualize_epipolar_mask.py 
 ```
 
 
