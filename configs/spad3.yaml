@@ -1,0 +1,126 @@
+model:
+  base_learning_rate: 0.0001
+  resume_path: data/v1-5-pruned.ckpt
+  fast_attention: true
+  target: nvs.nvs_ldm.TextViews
+  params:
+    linear_start: 0.00085
+    linear_end: 0.012
+    num_timesteps_cond: 1
+    log_every_t: 200
+    timesteps: 1000
+    first_stage_key: none
+    cond_stage_key: none
+    conditioning_key: hybrid-mv
+    cc_type: timesteps_only_emb
+    mv_timesteps_style: same
+    oom_fix: true
+    image_size: 32
+    channels: 4
+    cond_stage_trainable: false
+    monitor: val/loss_simple_ema
+    scale_factor: 0.18215
+    cfg_conds:
+    - txt
+    cfg_scales:
+    - 7.5
+    skip_plucker: false
+    skip_epi: false
+    scheduler_config:
+      target: ldm.lr_scheduler.LambdaLinearScheduler
+      params:
+        warm_up_steps:
+        - 100
+        cycle_lengths:
+        - 10000000000000
+        f_start:
+        - 1.0e-06
+        f_max:
+        - 1.0
+        f_min:
+        - 1.0
+    unet_config:
+      target: nvs.branch_unet.ManyStreamUnetModel
+      params:
+        image_size: 32
+        in_channels: 4
+        out_channels: 4
+        model_channels: 320
+        attention_resolutions:
+        - 4
+        - 2
+        - 1
+        num_res_blocks: 2
+        channel_mult:
+        - 1
+        - 2
+        - 4
+        - 4
+        num_heads: 8
+        use_spatial_transformer: true
+        transformer_depth: 1
+        context_dim: 768
+        use_checkpoint: true
+        legacy: false
+        denoise_channels: 4
+        in_feat_channels: 6
+        decode_cross: true
+        post_init_type: manystream-plucker
+    first_stage_config:
+      target: ldm.models.autoencoder.AutoencoderKL
+      params:
+        embed_dim: 4
+        monitor: val/rec_loss
+        ddconfig:
+          double_z: true
+          z_channels: 4
+          resolution: 256
+          in_channels: 3
+          out_ch: 3
+          ch: 128
+          ch_mult:
+          - 1
+          - 2
+          - 4
+          - 4
+          num_res_blocks: 2
+          attn_resolutions: []
+          dropout: 0.0
+        lossconfig:
+          target: torch.nn.Identity
+    cond_stage_config:
+      target: ldm.modules.encoders.modules.FrozenCLIPEmbedder
+    ckpt_path: null
+data:
+  target: nvs.z123_dataset.ManyViewsDataModuleFromConfig
+  params:
+    root_dir: /nfs/data/objaverse/rendering
+    batch_size: 40
+    views_per_sample_range:
+    - 2
+    - 2
+    batch_size_dict:
+      laion: 60
+      mv:
+        2: 30
+        4: 12
+    num_workers: 20
+    total_view: 4
+    laion_batch_prob: 0.1
+    setup: polyview-random
+    additional_setups: []
+    add_text: true
+    add_text_tok: true
+    only_text_samples: true
+    text_type: cap3d_no_3d
+    use_internal_filter: meta_filtered
+    laion_type: 625K
+    mask_init: ones
+    mv_datasets:
+    - objaverse
+    debug: false
+    train:
+      validation: false
+      image_transforms:
+        size: 256
+
