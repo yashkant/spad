@@ -61,17 +61,13 @@ If you already have the repository cloned, you can update the submodules using t
 git submodule update --init --recursive
 ```
 
-Install dependencies and pytorch (tested with CUDA 11.8):
+Install dependencies, pytorch (tested with CUDA 11.8) and ldm:
 ```
 pip install -r requirements.txt
 pip install --ignore-installed torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-```
-
-<!-- (is this needed??) Install the `spad` package:
-```text
 pip install -e .
-``` -->
 
+```
 
 ## Download Files
 Download checkpoints and cache using following command:
