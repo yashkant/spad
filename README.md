@@ -103,9 +103,8 @@ You can adjust the following hyperparameters for best results:
 We provide code that allows you to visualize epipolar lines corresponding to each pixel between any two given views (see example below).
 <p align="center">
   <img src="data/visuals/readme/epipolar_visual.gif">
-  <img src="data/visuals/readme/nametag.png">
+  <img src="data/visuals/readme/tag.png">
 </p>
-
 
 
 
