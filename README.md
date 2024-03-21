@@ -103,9 +103,9 @@ You can adjust the following hyperparameters for best results:
 We provide code that allows you to visualize epipolar lines corresponding to each pixel between any two given views (see example below).
 <p align="center">
   <img src="data/visuals/readme/epipolar_visual.gif">
-  <img src="data/visuals/readme/tag.png">
 </p>
 
+LHS above shows the source view (see highlighted pixel) from where the camera ray emerges, and RHS shows the target view and the epipolar line corresponding to the source pixel.
 
 
 To visualize the epipolar masks and plucker embeddings (or use them as separate module), read and run the following script:
