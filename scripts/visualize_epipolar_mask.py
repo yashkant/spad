@@ -10,7 +10,7 @@ from easydict import EasyDict as edict
 from spad.geometry import get_mask_and_plucker
 
 
-def visualize_epipolar_mask(epipolar_attention_masks):
+def visualize_epipolar_mask(epipolar_attention_masks, object_frames, num_views, image_size):
     """
     Given epipolar attention masks as a grid (num_views x num_views x image_size^2 x image_size^2), visualizes epipolar lines (masks) between pairs of views.   
     """
@@ -49,10 +49,10 @@ def visualize_epipolar_mask(epipolar_attention_masks):
             imageio.mimsave(gif_path, highlights, fps=5)
 
 
-def main():
+def main(image_size=196, num_views=3, start_idx=1, object="lynx"):
     # randomly select an object and load few frames + cameras
     object_frames_paths = glob.glob(f"data/samples/lynx/images/*.png")
-    object_frames_paths = sorted(object_frames_paths)[1:4]
+    object_frames_paths = sorted(object_frames_paths)[start_idx:start_idx+num_views]
 
     # load all frames
     object_frames = [torch.from_numpy(imageio.imread(frame_path)) for frame_path in object_frames_paths]
@@ -62,7 +62,7 @@ def main():
     object_frames = [(frame[:,:,:3]).float() / 255.0 for frame in object_frames]
 
     # resize to 196 (adjust based on your RAM)
-    size = 196
+    size = image_size
     object_frames = [F.interpolate(frame[None].permute(0,3,1,2), size=(size, size)) for frame in object_frames]
     object_frames = [frame.squeeze() for frame in object_frames]
 
@@ -116,8 +116,12 @@ def main():
             plucker_embeds[src_idx], plucker_embeds[tgt_idx] = src_plucker, tgt_plucker
 
     # visualize epipolar mask
-    visualize_epipolar_mask(epipolar_attention_masks)
+    visualize_epipolar_mask(epipolar_attention_masks, object_frames, num_views, image_size)
 
 
 if __name__ == "__main__":
-    main()
+    # select objects from ["lynx", "bread", "bono"]
+    # select num_views from 1 to 12
+    # select start_idx from 1 to 12
+    # select image_size from 32 to 512
+    main(image_size=196, num_views=3, start_idx=1, object="lynx")

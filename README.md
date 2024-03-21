@@ -74,8 +74,12 @@ pip install -e .
 
 
 ## Download Files
-Download files from the [dropbox link](https://www.dropbox.com/sh/dk6oubjlt2x7w0h/AAAKExm33IKnVe8mkC4tOzUKa) and place it in the ``data/`` folder.
-Ensure that data paths match the directory structure provided in ``data/README.md``
+Download checkpoints and cache using following command:
+```
+python scripts/download.py
+```
+You can also download from browser / manually from huggingface hub: https://huggingface.co/yashkant/spad/tree/main/data
+
 
 ## Pretrained Model
 
@@ -96,7 +100,16 @@ You can adjust the following hyperparameters for best results:
 ```
 
 ## Visualizing and Creating Epipolar Masks  
-If you would like to visualize the epipolar masks and plucker embeddings or use them as separate module, read and run the following script:
+We provide code that allows you to visualize epipolar lines corresponding to each pixel between any two given views (see example below).
+<p align="center">
+  <img src="data/visuals/readme/epipolar_visual.gif">
+  <img src="data/visuals/readme/nametag.png">
+</p>
+
+
+
+
+To visualize the epipolar masks and plucker embeddings (or use them as separate module), read and run the following script:
 
 ```
 python scripts/visualize_epipolar_mask.py 
