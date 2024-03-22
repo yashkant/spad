@@ -79,14 +79,16 @@ You can also download from browser / manually from huggingface hub: https://hugg
 
 ## Pretrained Model
 
-We provide two pretrained models, with following specifications:
-- `spad_two_views`: Trained with learning rate 1e-4, relative cameras (between views) and no intrinsics, two views, random viewpoints.
-- `spad_four_views`: Trained with learning rate 2e-5, absolute cameras (between views) with intrinsics, four views, random + orthogonal viewpoints
+We provide two intermediate checkpoints, with following specifications:
+- `spad_two_views`: Trained jointly to denoise two views with learning rate 1e-4, relative cameras (between views) and no intrinsics,random viewpoints.
+- `spad_four_views`: Trained jointly to denoise four views with learning rate 2e-5, absolute cameras (between views) with intrinsics, random + orthogonal viewpoints
 
 You can test these models out using: 
 ```
-python scripts/inference.py --model <model_name> 
+python scripts/inference.py --model spad_two_views --caption "Yellow Toyota Celica sports car."
 ```
+
+Remove the caption argument to test on few evaluation captions provided at `data/captions_eval.npy`.
 
 You can adjust the following hyperparameters for best results:
 ```
