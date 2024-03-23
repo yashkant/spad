@@ -9,10 +9,9 @@ Published at CVPR, 2024
 </h4>
 <hr>
 
-**Paper:** [https://arxiv.org/abs/2402.05235](https://https://arxiv.org/abs/2402.05235)
+**Paper:** https://arxiv.org/abs/2402.05235
 
-**Project Page:** [https://yashkant.github.io/spad/](https://yashkant.github.io/spad/)
-
+**Project Page:** https://yashkant.github.io/spad/
 
 <p align="center">
   <img src="data/visuals/readme/spad_pipeline.png">
