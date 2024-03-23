@@ -49,24 +49,16 @@ conda create -n spad python=3.8 -y
 conda activate spad
 ```
 
-Clone the repository with submodules using the following command:
+Clone the repository using the following command:
 
 ```text
-git clone --recursive https://github.com/yashkant/spad
+git clone https://github.com/yashkant/spad
 cd spad
 ```
-
-If you already have the repository cloned, you can update the submodules using the following command:
-```text
-git submodule update --init --recursive
-```
-
 Install dependencies, pytorch (tested with CUDA 11.8) and ldm:
 ```
-pip install -r requirements.txt
 pip install --ignore-installed torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-pip install -e .
-
+pip install -r requirements.txt
 ```
 
 ## Download Files
@@ -79,7 +71,7 @@ You can also download from browser / manually from huggingface hub: https://hugg
 
 ## Pretrained Model
 
-We provide two intermediate checkpoints, with following specifications:
+We provide two intermediate (slightly undertrained) checkpoints, with following specifications:
 - `spad_two_views`: Trained jointly to denoise two views with learning rate 1e-4, relative cameras (between views) and no intrinsics,random viewpoints.
 - `spad_four_views`: Trained jointly to denoise four views with learning rate 2e-5, absolute cameras (between views) with intrinsics, random + orthogonal viewpoints
 
@@ -113,3 +105,5 @@ python scripts/visualize_epipolar_mask.py
 ```
 
 
+## License 
+Coming soon. 
