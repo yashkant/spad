@@ -187,7 +187,6 @@ if __name__ == "__main__":
     model_zoo = {
         "spad_four_views": ("configs/spad_four_views.yaml", "data/checkpoints/spad_four_views.ckpt"),
         "spad_two_views": ("configs/spad_two_views.yaml", "data/checkpoints/spad_two_views.ckpt"),
-        "spad_two_views_old": ("configs/spad_two_views_old.yaml", "/scratch/ssd004/scratch/yashkant/last.ckpt"),
     }
 
     # select model
