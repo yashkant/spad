@@ -59,6 +59,7 @@ Install dependencies, pytorch (tested with CUDA 11.8) and ldm:
 ```
 pip install --ignore-installed torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install -r requirements.txt
+pip install -e .
 ```
 
 ## Download Files
