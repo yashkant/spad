@@ -55,11 +55,13 @@ Clone the repository using the following command:
 git clone https://github.com/yashkant/spad
 cd spad
 ```
-Install dependencies, pytorch (tested with CUDA 11.8) and ldm:
+Install dependencies, pytorch (tested with CUDA 11.8), pytorch3d and ldm:
 ```
 pip install --ignore-installed torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install -r requirements.txt
+pip install "git+https://github.com/facebookresearch/pytorch3d.git"
 pip install -e .
+
 ```
 
 ## Download Files
