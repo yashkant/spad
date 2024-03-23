@@ -31,4 +31,3 @@ xformers
 huggingface_hub[cli,torch]
 opencv-python
 xformers
-"git+https://github.com/facebookresearch/pytorch3d.git"
