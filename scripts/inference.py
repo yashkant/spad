@@ -18,7 +18,7 @@ from spad.geometry import get_batch_from_spherical
 from ldm.models.diffusion.ddim import ManyViewDDIMSampler
 
 
-def generate_batch(elevations=[60,60,60,60], azimuths=[0,90,180,270], use_abs=False):
+def generate_batch(elevations=[45,45,45,45], azimuths=[0,90,180,270], use_abs=False):
     elevations = [math.radians(e) for e in elevations]; azimuths = [math.radians(a) for a in azimuths]
 
     # assert first frame is identity
@@ -156,12 +156,12 @@ def main(config_path, checkpoint_path, captions, cfg_scale=7.5, blob_sigma=0.5, 
         for idx, batch in enumerate(tqdm(dataloader, desc="sampling")):
             
             # terminate when done
-            if batch_size * (idx + 1) > len(captions):
+            if batch_size * (idx + 1) >= len(captions):
                 batch_size = len(captions) - batch_size * idx
                 terminate = True
 
             # define cameras (elevations and azimuths)
-            elevations = [60 for _ in range(total_views)] 
+            elevations = [45 for _ in range(total_views)] 
             azimuths = [az for az in np.linspace(0, 360* ((total_views-1)/total_views) , total_views)]
 
             print(f"using elevations: {elevations}, azimuths: {azimuths}")

@@ -48,19 +48,26 @@ conda create -n spad python=3.8 -y
 conda activate spad
 ```
 
-Clone the repository using the following command:
-
-```text
+Clone the repository. Then, install pytorch (tested with CUDA 11.8), dependencies, pytorch3d, taming-transformers, and ldm:
+```
 git clone https://github.com/yashkant/spad
 cd spad
-```
-Install dependencies, pytorch (tested with CUDA 11.8), pytorch3d and ldm:
-```
-pip install --ignore-installed torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-pip install -r requirements.txt
-pip install "git+https://github.com/facebookresearch/pytorch3d.git"
-pip install -e .
 
+# get pytorch (select correct CUDA version)
+pip install --ignore-installed torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+# get dependencies
+pip install -r requirements.txt
+
+# get and install pytorch3d (from source)
+pip install "git+https://github.com/facebookresearch/pytorch3d.git"
+
+# get and install taming-transformers (from source)
+git clone git@github.com:CompVis/taming-transformers.git
+cd taming-transformers && pip install -e . && cd ..
+
+# install ldm (from spad)
+pip install -e .
 ```
 
 ## Download Files
