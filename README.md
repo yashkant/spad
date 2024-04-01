@@ -39,6 +39,8 @@ If you are looking for the objaverse assets we used to train SPAD models, you ca
 
 To see how this list was generated / tweak its parameters, you can try this colab notebook here: [filter_objaverse.ipynb](https://colab.research.google.com/drive/1UJM4caaBJsYOkP7EmjPjBvoJ7U0qY4kq#scrollTo=sR28TydbQUuT)
 
+See [this issue](https://github.com/yashkant/spad/issues/3) for more discussion on data. 
+
 ## Repository Setup
 
 Create a fresh conda environment, and install all dependencies.
