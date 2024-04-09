@@ -115,6 +115,8 @@ To visualize the epipolar masks and plucker embeddings (or use them as separate 
 python scripts/visualize_epipolar_mask.py 
 ```
 
+Important note: Some of the cameras of the uploaded sample visuals have zero translation, and are thus incorrect. Please ignore their outputs, I will attempt to clean these cameras from codebase very soon. 
+
 
 ## License 
 Coming soon. 
