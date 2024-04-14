@@ -100,6 +100,8 @@ You can adjust the following hyperparameters for best results:
 --ddim_steps: 50 to 1000 (default 100)
 ```
 
+To understand the camera convention take a look at this [issue](https://github.com/yashkant/spad/issues/5). 
+
 ## Visualizing and Creating Epipolar Masks  
 We provide code that allows you to visualize epipolar lines corresponding to each pixel between any two given views (see example below).
 <p align="center">
