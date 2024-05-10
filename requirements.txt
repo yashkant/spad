@@ -29,4 +29,4 @@ torch-fidelity
 lightning
 huggingface_hub[cli,torch]
 opencv-python
-xformers==0.0.23.post1
+xformers
