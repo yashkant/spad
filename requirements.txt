@@ -27,7 +27,6 @@ lpips
 mathutils==2.81.2
 torch-fidelity
 lightning
-xformers
 huggingface_hub[cli,torch]
 opencv-python
-xformers
+xformers==0.0.23.post1
