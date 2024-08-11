@@ -102,6 +102,8 @@ You can adjust the following hyperparameters for best results:
 
 To understand the camera convention take a look at this [issue](https://github.com/yashkant/spad/issues/5). 
 
+To train on custom dataset take a look at this [comment](https://github.com/yashkant/spad/issues/6#issuecomment-2133834150). 
+
 ## Visualizing and Creating Epipolar Masks  
 We provide code that allows you to visualize epipolar lines corresponding to each pixel between any two given views (see example below).
 <p align="center">
