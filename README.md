@@ -71,6 +71,7 @@ cd taming-transformers && pip install -e . && cd ..
 # install ldm (from spad)
 pip install -e .
 ```
+If you run into dependency mismatch issues, take a look at this issue: https://github.com/yashkant/spad/issues/13#issuecomment-2640721687
 
 ## Download Files
 Download checkpoints and cache using following command:
